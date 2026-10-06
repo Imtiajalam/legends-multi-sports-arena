@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legends Multi Sports Arena | Be the Next Legend | Nikra, Dohar</title>
+  <meta name="description" content="Premier multi-sports arena in Nikra, Dohar, Dhaka. 188x74 FT turf for football, cricket, and badminton under high-lux stadium lighting." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              charcoal: '#0B0F17',
+              dark: '#111827',
+              surface: '#1A2234',
+              surfaceLight: '#242F46',
+              neon: '#84CC16', // Vibrant neon-lime matching the logo shield
+              blue: '#006FCB', // Crest royal blue
+              blueDark: '#004e92',
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F17; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #84CC16; }
+    .glass-card {
+      background: rgba(26, 34, 52, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(132, 204, 22, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px -10px rgba(132, 204, 22, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-brand-charcoal text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-neon selection:text-black pb-20 md:pb-0">
+
+  <!-- ================= TOP NAVIGATION WITH LOGO ================= -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-white/10 bg-brand-charcoal/90 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Badge -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 p-1 group-hover:border-brand-neon transition shadow-lg">
+          <img src="logo.png" alt="Legends Multi Sports Arena Logo" class="w-full h-full object-contain filter drop-shadow group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/006FCB/84CC16?text=LEGENDS';"/>
+        </div>
+        <div>
+          <span class="font-display font-black text-lg sm:text-xl tracking-wider text-white block uppercase leading-none">Legends</span>
+          <span class="text-[9px] sm:text-[10px] tracking-widest text-brand-neon font-bold uppercase block mt-1">Multi Sports Arena</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide">
+        <a href="#about" class="text-slate-300 hover:text-brand-neon transition">About</a>
+        <a href="#facilities" class="text-slate-300 hover:text-brand-neon transition">Sports</a>
+        <a href="#pricing" class="text-slate-300 hover:text-brand-neon transition">Pricing</a>
+        <a href="#booking" class="text-slate-300 hover:text-brand-neon transition">Slot Booking</a>
+        <a href="#membership" class="text-slate-300 hover:text-brand-neon transition">Membership</a>
+        <a href="#gallery" class="text-slate-300 hover:text-brand-neon transition">Gallery</a>
+        <a href="#contact" class="text-slate-300 hover:text-brand-neon transition">Location</a>
+      </div>
+
+      <!-- Action Area -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button onclick="toggleAdminModal()" class="px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white glass-card rounded-lg transition border border-white/10 hover:border-brand-neon">
+          <i class="fa-solid fa-lock text-brand-neon mr-1.5"></i> Admin
+        </button>
+        <a href="#booking" class="px-5 py-2.5 bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black text-xs rounded-xl tracking-wider uppercase transition shadow-lg shadow-brand-neon/20 flex items-center gap-2">
+          <span>Book Slot</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Trigger -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl p-2 focus:outline-none" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark/95 border-b border-white/10 px-6 py-6 space-y-4">
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">About</a>
+      <a href="#facilities" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Sports & Facilities</a>
+      <a href="#pricing" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Pricing</a>
+      <a href="#booking" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Online Booking</a>
+      <a href="#membership" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Membership</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Gallery</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-brand-neon font-semibold">Contact & Location</a>
+      <button onclick="toggleAdminModal(); toggleMobileMenu();" class="w-full text-left text-xs font-bold text-brand-neon uppercase py-2">
+        <i class="fa-solid fa-shield-halved mr-1.5"></i> Open Staff Portal
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= 1. HERO SECTION ================= -->
+  <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=2000&q=80" alt="Stadium Night Football" class="w-full h-full object-cover object-center filter brightness-40 scale-105" />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/75 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal via-transparent to-brand-charcoal"></div>
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-brand-neon/15 rounded-full blur-[140px] pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto text-center mt-4">
+      
+      <!-- Logo Watermark Pill -->
+      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-card border border-brand-neon/30 mb-6 shadow-xl">
+        <img src="logo.png" alt="Legends Crest" class="w-6 h-6 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/006FCB/84CC16?text=L';"/>
+        <span class="text-white text-xs font-bold uppercase tracking-widest">
+          Nikra, Dohar • <span class="text-brand-neon">Open 24/7</span>
+        </span>
+      </div>
+
+      <h1 class="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight uppercase leading-[0.95] text-white">
+        Legends Multi <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-white to-brand-blue">Sports Arena</span>
+      </h1>
+
+      <p class="font-display italic text-brand-neon font-bold text-lg sm:text-2xl mt-4 tracking-wide">
+        “Be the Next Legend.”
+      </p>
+
+      <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto mt-4 leading-relaxed font-normal">
+        Premium sports experience in Dohar — built for players, teams, and the next generation of legends.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#booking" class="w-full sm:w-auto px-8 py-4 bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black text-sm rounded-xl tracking-wider uppercase transition transform hover:-translate-y-0.5 shadow-xl shadow-brand-neon/25 flex items-center justify-center gap-3">
+          <i class="fa-regular fa-calendar-check text-base"></i>
+          <span>Book Your Slot</span>
+        </a>
+        <a href="#facilities" class="w-full sm:w-auto px-8 py-4 glass-card hover:bg-white/10 text-white font-display font-bold text-sm rounded-xl tracking-wider uppercase transition border border-white/20 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-compass text-slate-400"></i>
+          <span>Explore Arena</span>
+        </a>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto text-xs font-semibold text-slate-300 uppercase tracking-wider">
+        <div class="glass-card py-3 px-4 rounded-xl border border-white/10 flex items-center justify-center gap-2">
+          <span>⚽ Football Turf</span>
+        </div>
+        <div class="glass-card py-3 px-4 rounded-xl border border-white/10 flex items-center justify-center gap-2">
+          <span>🏏 Cricket</span>
+        </div>
+        <div class="glass-card py-3 px-4 rounded-xl border border-white/10 flex items-center justify-center gap-2">
+          <span>🏸 Badminton</span>
+        </div>
+        <div class="glass-card py-3 px-4 rounded-xl border border-white/10 flex items-center justify-center gap-2">
+          <span>🌙 Night Matches</span>
+        </div>
+      </div>
+
+      <!-- Floating Quick Booking Card -->
+      <div class="mt-10 glass-card p-4 sm:p-5 rounded-2xl border border-brand-neon/30 max-w-4xl mx-auto shadow-2xl text-left">
+        <div class="flex flex-col md:flex-row items-center gap-3">
+          <div class="flex-1 w-full">
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Select Sport</label>
+            <select id="heroSport" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon">
+              <option>⚽ Football Turf</option>
+              <option>🏏 Cricket Nets</option>
+              <option>🏸 Badminton Court</option>
+            </select>
+          </div>
+          <div class="flex-1 w-full">
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Select Date</label>
+            <input type="date" id="heroDate" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-neon" />
+          </div>
+          <div class="flex-1 w-full">
+            <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Select Window</label>
+            <select class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon">
+              <option>Evening / Night (5 PM - 1 AM)</option>
+              <option>Morning (6 AM - 11 AM)</option>
+              <option>Afternoon (12 PM - 4 PM)</option>
+            </select>
+          </div>
+          <div class="w-full md:w-auto self-end">
+            <a href="#booking" class="w-full md:w-auto px-6 py-2.5 bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black text-sm uppercase rounded-lg tracking-wider transition block text-center">
+              Find Slot
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 2. ABOUT LEGENDS ================= -->
+  <section id="about" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">More Than Just a Turf</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase leading-tight">
+          It’s Where <span class="text-brand-blue">Legends Begin.</span>
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          <strong>Legends Multi Sports Arena</strong> is the premier modern sports destination tailored for football enthusiasts, cricket athletes, badminton competitors, clubs, and sports communities across Dohar and Nawabganj.
+        </p>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Featuring synthetic shock-absorbing grass, non-glare floodlighting, comfortable sidelines, and uninterrupted power backup, we deliver a stadium-level playing arena for players who aspire to greatness.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          <div class="glass-card p-4 rounded-xl border-l-4 border-l-brand-neon">
+            <span class="font-display font-black text-2xl text-white block">188×74</span>
+            <span class="text-xs text-slate-400 uppercase font-semibold">FT Football Turf</span>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-l-brand-blue">
+            <span class="font-display font-black text-2xl text-white block">24/7</span>
+            <span class="text-xs text-slate-400 uppercase font-semibold">Sports Energy</span>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-l-brand-neon">
+            <span class="font-display font-black text-2xl text-white block">Night</span>
+            <span class="text-xs text-slate-400 uppercase font-semibold">Match Experience</span>
+          </div>
+          <div class="glass-card p-4 rounded-xl border-l-4 border-l-brand-blue">
+            <span class="font-display font-black text-2xl text-white block">Premium</span>
+            <span class="text-xs text-slate-400 uppercase font-semibold">Environment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80" alt="Football Turf Match" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl glass-card border border-white/15">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-dark border border-white/10 flex items-center justify-center p-2 shrink-0">
+                <img src="logo.png" alt="Legends Emblem" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/006FCB/84CC16?text=L';"/>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-white text-base uppercase">Nikra, Dohar’s Benchmark Turf</h4>
+                <p class="text-xs text-slate-300">Engineered for tournament thrills and weekend rivalries.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. SPORTS & FACILITIES ================= -->
+  <section id="facilities" class="py-20 bg-brand-dark/50 border-y border-white/5 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Multi-Sports Facilities</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          Play Your Game. <span class="text-brand-blue">Your Way.</span>
+        </h2>
+        <p class="text-slate-400 text-sm mt-3">Specialized facilities built to tournament specifications.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between glass-card-hover group border border-white/10">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon text-2xl mb-6 group-hover:scale-110 transition-transform">⚽</div>
+            <h3 class="font-display font-extrabold text-xl text-white uppercase tracking-wide">Football Turf</h3>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Professional-quality football turf designed for competitive matches, training sessions, casual games, and tournaments.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5">
+            <a href="#booking" class="w-full inline-flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-brand-neon hover:text-white transition">
+              <span>Book Football</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between glass-card-hover group border border-white/10">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-blue text-2xl mb-6 group-hover:scale-110 transition-transform">🏏</div>
+            <h3 class="font-display font-extrabold text-xl text-white uppercase tracking-wide">Cricket</h3>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Dedicated cricket facilities for practice sessions, friendly tape-ball matches, and future cricket experiences.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5">
+            <a href="#booking" class="w-full inline-flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-brand-blue hover:text-white transition">
+              <span>Explore Cricket</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between glass-card-hover group border border-white/10 relative overflow-hidden">
+          <div class="absolute -top-3 -right-8 bg-brand-blue/90 text-[10px] font-bold uppercase tracking-widest px-8 py-1 rotate-45 text-white">Future</div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition-transform">🏸</div>
+            <h3 class="font-display font-extrabold text-xl text-white uppercase tracking-wide">Badminton</h3>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Modern badminton facility planned for players of all skill levels with planned anti-slip synthetic flooring.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5">
+            <span class="inline-flex items-center gap-2 text-xs font-display font-bold uppercase tracking-wider text-slate-500">
+              <i class="fa-regular fa-clock"></i> Coming Soon
+            </span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between glass-card-hover group border border-white/10">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">🏆</div>
+            <h3 class="font-display font-extrabold text-xl text-white uppercase tracking-wide">Tournaments & Events</h3>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Host football tournaments, corporate events, community matches, and special sports events with full facility access.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-white/5">
+            <a href="https://wa.me/8801315887788?text=Hello%20Legends%20Arena,%20I%20want%20to%20host%20an%20Event" target="_blank" class="w-full inline-flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-amber-400 hover:text-white transition">
+              <span>Host an Event</span>
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. TURF EXPERIENCE ================= -->
+  <section class="py-24 relative overflow-hidden bg-brand-charcoal">
+    <div class="max-w-7xl mx-auto px-4 mb-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Arena Energy</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+            Every Match <span class="text-brand-neon">Has a Story.</span>
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">
+          High-intensity night lighting, competitive matches, comfortable player sideline dugouts, and an authentic athletic atmosphere.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-6 overflow-x-auto pb-8 pt-2 px-4 no-scrollbar scroll-smooth">
+      <div class="min-w-[320px] sm:min-w-[420px] h-[300px] rounded-2xl overflow-hidden relative group shrink-0 border border-white/10">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium Lights" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-transparent to-transparent flex items-end p-6">
+          <span class="font-display font-bold text-white text-lg">Anti-Glare Night Lighting</span>
+        </div>
+      </div>
+
+      <div class="min-w-[320px] sm:min-w-[420px] h-[300px] rounded-2xl overflow-hidden relative group shrink-0 border border-white/10">
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80" alt="Football Match Action" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-transparent to-transparent flex items-end p-6">
+          <span class="font-display font-bold text-white text-lg">Elite Synthetic Turf Blades</span>
+        </div>
+      </div>
+
+      <div class="min-w-[320px] sm:min-w-[420px] h-[300px] rounded-2xl overflow-hidden relative group shrink-0 border border-white/10">
+        <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80" alt="Team Match" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-transparent to-transparent flex items-end p-6">
+          <span class="font-display font-bold text-white text-lg">Competitive Team Matches</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. PRICING SECTION ================= -->
+  <section id="pricing" class="py-20 px-4 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Simple Rates</span>
+      <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+        Choose Your <span class="text-brand-neon">Playing Time</span>
+      </h2>
+      <p class="text-slate-400 text-sm mt-3">Standard rates for open booking slots.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between">
+        <div>
+          <div class="inline-block px-3 py-1 bg-white/10 rounded-full text-slate-300 font-bold text-xs uppercase tracking-wider mb-4">
+            Daytime
+          </div>
+          <h3 class="font-display font-black text-2xl text-white uppercase">OFF-PEAK</h3>
+          <p class="text-slate-400 text-xs mt-1">Morning & afternoon training sessions</p>
+
+          <div class="my-6">
+            <span class="text-4xl sm:text-5xl font-display font-black text-white">৳2,000</span>
+            <span class="text-slate-400 text-sm">/ hour</span>
+          </div>
+
+          <div class="space-y-3 py-4 border-y border-white/5 text-sm text-slate-300">
+            <div class="flex items-center gap-3">
+              <i class="fa-regular fa-clock text-brand-neon"></i>
+              <span>Slot hours: <strong>6:00 AM – 4:00 PM</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check text-brand-neon"></i>
+              <span>Full 188×74 FT turf access</span>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="prefillBooking('offpeak')" class="mt-8 w-full py-3.5 rounded-xl border border-brand-neon/40 hover:bg-brand-neon hover:text-brand-charcoal font-display font-bold uppercase text-xs tracking-wider transition">
+          Book Off-Peak
+        </button>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 border-2 border-brand-neon relative overflow-hidden flex flex-col justify-between bg-gradient-to-b from-brand-surface to-brand-charcoal shadow-2xl shadow-brand-neon/10">
+        <div class="absolute top-4 right-4 bg-brand-neon text-brand-charcoal text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+          High Energy
+        </div>
+
+        <div>
+          <div class="inline-block px-3 py-1 bg-brand-neon/10 rounded-full text-brand-neon font-bold text-xs uppercase tracking-wider mb-4">
+            Night Lights
+          </div>
+          <h3 class="font-display font-black text-2xl text-white uppercase">PEAK</h3>
+          <p class="text-slate-400 text-xs mt-1">Prime floodlight evening & midnight games</p>
+
+          <div class="my-6">
+            <span class="text-4xl sm:text-5xl font-display font-black text-brand-neon">৳2,500</span>
+            <span class="text-slate-400 text-sm">/ hour</span>
+          </div>
+
+          <div class="space-y-3 py-4 border-y border-white/10 text-sm text-slate-200">
+            <div class="flex items-center gap-3">
+              <i class="fa-regular fa-moon text-brand-neon"></i>
+              <span>Slot hours: <strong>5:00 PM – 1:00 AM</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-bolt text-brand-neon"></i>
+              <span>High-lux LED floodlights</span>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="prefillBooking('peak')" class="mt-8 w-full py-3.5 rounded-xl bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black uppercase text-xs tracking-wider transition shadow-lg shadow-brand-neon/20">
+          Book Peak
+        </button>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-slate-400 mt-8 italic">
+      “Prices may vary depending on special events, tournaments and promotional offers.”
+    </p>
+  </section>
+
+  <!-- ================= 6. ONLINE SLOT BOOKING ================= -->
+  <section id="booking" class="py-24 bg-brand-dark/70 border-t border-white/10 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Fast & Direct</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          Book Your <span class="text-brand-neon">Slot</span>
+        </h2>
+        <p class="text-slate-400 text-sm mt-3">Reserve your turf time in 4 simple steps.</p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-neon/30 shadow-2xl">
+        
+        <!-- Step 1: Select Sport -->
+        <div class="mb-8">
+          <label class="block text-xs font-extrabold uppercase tracking-widest text-brand-neon mb-3">Step 1: Select Sport</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button type="button" onclick="selectSport('football')" id="sport-football" class="sport-btn p-4 rounded-xl border border-brand-neon bg-brand-neon/10 text-white font-display font-bold flex items-center justify-center gap-3 transition">
+              <span class="text-xl">⚽</span>
+              <span>Football</span>
+            </button>
+            <button type="button" onclick="selectSport('cricket')" id="sport-cricket" class="sport-btn p-4 rounded-xl border border-white/10 bg-brand-surface text-slate-300 font-display font-bold flex items-center justify-center gap-3 transition hover:border-white/30">
+              <span class="text-xl">🏏</span>
+              <span>Cricket</span>
+            </button>
+            <button type="button" onclick="selectSport('badminton')" id="sport-badminton" class="sport-btn p-4 rounded-xl border border-white/10 bg-brand-surface text-slate-300 font-display font-bold flex items-center justify-center gap-3 transition hover:border-white/30">
+              <span class="text-xl">🏸</span>
+              <span>Badminton</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Select Date -->
+        <div class="mb-8">
+          <label class="block text-xs font-extrabold uppercase tracking-widest text-brand-neon mb-3">Step 2: Select Date</label>
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <input type="date" id="bookingDate" value="2026-10-04" min="2026-10-04" onchange="generateSlots()" class="w-full sm:w-72 bg-brand-charcoal border border-white/20 rounded-xl px-4 py-3 text-white font-bold text-sm focus:outline-none focus:border-brand-neon" />
+            <span class="text-xs text-slate-400">Slots refresh automatically.</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Select Time -->
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+            <label class="text-xs font-extrabold uppercase tracking-widest text-brand-neon">Step 3: Select Time</label>
+            <div class="flex items-center gap-4 text-[11px] font-semibold text-slate-400">
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Available</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Booked</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-brand-neon"></span> Selected</span>
+            </div>
+          </div>
+
+          <div id="slotsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+        </div>
+
+        <!-- Step 4: Customer Information -->
+        <div class="border-t border-white/10 pt-8">
+          <label class="block text-xs font-extrabold uppercase tracking-widest text-brand-neon mb-4">Step 4: Customer Information</label>
+          <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs text-slate-300 uppercase mb-1 font-semibold">Name *</label>
+                <input type="text" id="custName" required placeholder="Your Name" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+              <div>
+                <label class="block text-xs text-slate-300 uppercase mb-1 font-semibold">Phone Number *</label>
+                <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs text-slate-300 uppercase mb-1 font-semibold">Number of Players</label>
+                <input type="number" id="playerCount" value="12" min="2" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+              <div>
+                <label class="block text-xs text-slate-300 uppercase mb-1 font-semibold">Email (optional)</label>
+                <input type="email" id="custEmail" placeholder="optional@email.com" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs text-slate-300 uppercase mb-1 font-semibold">Special Request</label>
+              <textarea id="specialReq" rows="2" placeholder="Match bibs, extra footballs, tournament scheduling" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon"></textarea>
+            </div>
+
+            <div id="bookingSummary" class="glass-card p-4 rounded-xl border border-brand-neon/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-semibold">
+              <div>
+                <span class="text-slate-400 block">Chosen Slot:</span>
+                <span id="summaryText" class="text-white text-sm font-bold">Please select a time slot above</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Total Amount:</span>
+                <span id="summaryPrice" class="text-brand-neon text-lg font-black font-display">৳0</span>
+              </div>
+            </div>
+
+            <button type="submit" id="submitBookingBtn" disabled class="w-full py-4 rounded-xl bg-brand-neon disabled:opacity-40 disabled:cursor-not-allowed hover:bg-lime-400 text-brand-charcoal font-display font-black uppercase text-base tracking-wider transition shadow-xl shadow-brand-neon/20">
+              Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BOOKING CONFIRMED MODAL ================= -->
+  <div id="confirmationModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-8 border border-brand-neon relative">
+      <div class="w-16 h-16 rounded-full bg-brand-neon/20 text-brand-neon flex items-center justify-center text-3xl mx-auto mb-4">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="font-display font-black text-2xl sm:text-3xl text-center text-white uppercase">Booking Confirmed!</h3>
+      <p class="text-slate-300 text-center text-xs mt-1">Legends Multi Sports Arena has reserved your slot.</p>
+
+      <div class="mt-6 bg-brand-dark/80 p-4 rounded-2xl border border-white/10 space-y-2 text-xs">
+        <div class="flex justify-between py-1 border-b border-white/5">
+          <span class="text-slate-400">Booking ID:</span>
+          <span id="confId" class="text-brand-neon font-mono font-bold">#LEG-5082</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-white/5">
+          <span class="text-slate-400">Sport:</span>
+          <span id="confSport" class="text-white font-bold">Football</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-white/5">
+          <span class="text-slate-400">Date:</span>
+          <span id="confDate" class="text-white font-bold">2026-10-04</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-white/5">
+          <span class="text-slate-400">Time:</span>
+          <span id="confTime" class="text-white font-bold">08:00 PM</span>
+        </div>
+        <div class="flex justify-between pt-1">
+          <span class="text-slate-400">Amount:</span>
+          <span id="confPrice" class="text-brand-neon font-display font-black text-sm">৳2,500</span>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2.5">
+        <a id="confWhatsAppBtn" href="#" target="_blank" class="w-full py-3 bg-[#25D366] hover:bg-emerald-600 text-white font-display font-bold uppercase text-xs rounded-xl flex items-center justify-center gap-2 transition">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Send Details to WhatsApp</span>
+        </a>
+        <a href="tel:01315887788" class="w-full py-3 bg-brand-blue hover:bg-brand-blueDark text-white font-display font-bold uppercase text-xs rounded-xl flex items-center justify-center gap-2 transition">
+          <i class="fa-solid fa-phone text-xs"></i>
+          <span>Call Arena: 01315-887788</span>
+        </a>
+        <button onclick="closeConfirmationModal()" class="w-full py-3 bg-white/10 hover:bg-white/20 text-white font-display font-bold uppercase text-xs rounded-xl transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 7. MEMBERSHIP ================= -->
+  <section id="membership" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Membership Program</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase leading-tight">
+          Become a <span class="text-brand-neon">Legend Member</span>
+        </h2>
+        <p class="font-display italic text-lg text-slate-300">
+          “Play more. Save more. Build your team.”
+        </p>
+
+        <div class="space-y-3 pt-2 text-sm text-slate-200">
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Priority booking</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Special member pricing</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Regular match scheduling</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Exclusive offers</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Tournament access</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-neon"></i> Team benefits</div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-brand-surface/60 border border-white/10 text-xs text-slate-400">
+          <strong class="text-white">Membership Rule:</strong> Minimum 8 players per team.
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-brand-blue/40 shadow-2xl">
+          <h3 class="font-display font-black text-xl text-white uppercase mb-4">Membership Registration</h3>
+          <form onsubmit="handleMembershipSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Team Name</label>
+              <input type="text" required placeholder="e.g. Dohar Legends United" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Team Manager</label>
+                <input type="text" required placeholder="Manager Name" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Phone</label>
+                <input type="tel" required placeholder="01XXXXXXXXX" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Number of Players (Min 8)</label>
+                <input type="number" min="8" value="10" required class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Preferred Sport</label>
+                <select class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon">
+                  <option>Football</option>
+                  <option>Cricket</option>
+                  <option>Badminton</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Preferred Playing Time</label>
+              <input type="text" placeholder="e.g. Weekends 8:00 PM" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+            </div>
+
+            <button type="submit" class="w-full py-3.5 bg-brand-blue hover:bg-brand-blueDark text-white font-display font-black uppercase text-xs tracking-wider rounded-xl transition shadow-lg shadow-brand-blue/20">
+              Become a Member
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. WEEKLY / REGULAR MATCHES ================= -->
+  <section class="py-20 bg-brand-dark/40 border-y border-white/5 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Events Schedule</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          What's Happening <span class="text-brand-blue">at Legends</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl p-6 border border-white/10 hover:border-brand-neon/40 transition">
+          <h4 class="font-display font-bold text-xl text-white">Weekend Football</h4>
+          <span class="text-brand-neon text-xs font-bold uppercase tracking-wider mt-1 block">Saturday & Sunday</span>
+          <p class="text-slate-400 text-xs mt-3">High-intensity matches between local top teams and rival squads.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/10 hover:border-brand-neon/40 transition">
+          <h4 class="font-display font-bold text-xl text-white">Night Matches</h4>
+          <span class="text-brand-neon text-xs font-bold uppercase tracking-wider mt-1 block">Every evening</span>
+          <p class="text-slate-400 text-xs mt-3">Prime floodlight slots with competitive energy running till 1:00 AM.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/10 hover:border-brand-neon/40 transition">
+          <h4 class="font-display font-bold text-xl text-white">Community Games</h4>
+          <span class="text-brand-neon text-xs font-bold uppercase tracking-wider mt-1 block">Regular local matches</span>
+          <p class="text-slate-400 text-xs mt-3">Open casual slots for local youth squads and amateur hobbyists.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/10 hover:border-brand-neon/40 transition">
+          <h4 class="font-display font-bold text-xl text-white">Corporate / Private Events</h4>
+          <span class="text-brand-neon text-xs font-bold uppercase tracking-wider mt-1 block">Available for booking</span>
+          <p class="text-slate-400 text-xs mt-3">Full turf buyout for company matches, tournaments & private cups.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="#booking" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 hover:border-brand-neon text-white text-xs font-bold uppercase tracking-wider transition">
+          <i class="fa-solid fa-calendar-days text-brand-neon"></i>
+          <span>View Schedule</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. PROMOTIONS ================= -->
+  <section class="py-16 px-4 max-w-7xl mx-auto">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-brand-neon/40 relative overflow-hidden bg-gradient-to-r from-brand-surface via-brand-dark to-brand-surface">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <span class="text-brand-neon font-mono font-bold text-xs uppercase tracking-widest block">🔥 Dynamic Offers</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+            Play More. <span class="text-brand-neon">Pay Less.</span>
+          </h2>
+          <div class="mt-4 flex flex-wrap gap-4 text-xs font-bold">
+            <span class="px-3 py-1.5 rounded-lg bg-white/10 text-white">Weekday Special: ৳1,800/hour</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/10 text-white">Off-Peak Offer: ৳2,000/hour</span>
+            <span class="px-3 py-1.5 rounded-lg bg-brand-neon/20 text-brand-neon">Team Booking Special Rates</span>
+            <span class="px-3 py-1.5 rounded-lg bg-white/10 text-white">Tournament Package Custom Pricing</span>
+          </div>
+        </div>
+        <div class="shrink-0">
+          <a href="#booking" class="px-8 py-4 bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black text-sm uppercase rounded-xl tracking-wider transition shadow-xl shadow-brand-neon/20 block text-center">
+            Grab the Offer
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. PHOTO & VIDEO GALLERY ================= -->
+  <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Visual Tour</span>
+      <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+        Photo & Video <span class="text-brand-blue">Gallery</span>
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs font-bold">
+      <button class="px-4 py-2 rounded-lg bg-brand-neon text-brand-charcoal">All</button>
+      <button class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Football</button>
+      <button class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Matches</button>
+      <button class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Night Games</button>
+      <button class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Events</button>
+      <button class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300">Arena</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=80" alt="Turf photos" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Turf Photos</span>
+        </div>
+      </div>
+
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=800&q=80" alt="Players" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Match Players</span>
+        </div>
+      </div>
+
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=800&q=80" alt="Team photos" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Team Photos</span>
+        </div>
+      </div>
+
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80" alt="Night matches" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Night Matches</span>
+        </div>
+      </div>
+
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" alt="Tournament moments" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Tournament Moments</span>
+        </div>
+      </div>
+
+      <div class="relative h-64 rounded-2xl overflow-hidden group border border-white/10">
+        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=800&q=80" alt="Behind-the-scenes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-brand-charcoal/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+          <span class="text-white text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-expand mr-1"></i> Behind the Scenes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. REVIEWS ================= -->
+  <section class="py-20 bg-brand-dark/40 border-t border-white/5 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Verified Feedback</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+          What <span class="text-brand-neon">Players Say</span>
+        </h2>
+        <div class="mt-3 flex items-center justify-center gap-2 text-xs font-bold text-slate-300">
+          <span class="text-amber-400">★★★★★</span>
+          <span>Google & Facebook Rating: 4.9 / 5.0</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl border border-white/10">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            “The turf grass quality is exceptionally good. Ball roll is consistent, and the floodlighting allows crystal-clear nighttime play.”
+          </p>
+          <div>
+            <h5 class="font-display font-bold text-white text-sm">Fahim Rahman</h5>
+            <span class="text-xs text-brand-neon">Dohar Strikerz</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/10">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            “Clean arena, excellent parking, polite staff, and the slot booking via WhatsApp is effortless.”
+          </p>
+          <div>
+            <h5 class="font-display font-bold text-white text-sm">Saiful Islam</h5>
+            <span class="text-xs text-brand-neon">Nawabganj FC</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/10">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            “A game changer for sports in Dohar. Having cricket nets and a football arena in one venue is unmatched.”
+          </p>
+          <div>
+            <h5 class="font-display font-bold text-white text-sm">Imtiaz Hasan</h5>
+            <span class="text-xs text-brand-neon">Padma Kings Cricket</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 12 & 13. LOCATION & CONTACT ================= -->
+  <section id="contact" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-brand-neon font-bold tracking-widest text-xs uppercase block">Arena Directions</span>
+      <h2 class="font-display font-black text-3xl sm:text-5xl text-white uppercase mt-2">
+        Find Your Way <span class="text-brand-blue">To Legends</span>
+      </h2>
+      <p class="text-slate-400 text-sm mt-3">📍 Nikra, Dohar, Dhaka, Bangladesh</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-6 space-y-6">
+        <div class="glass-card p-6 rounded-2xl border border-white/10">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/30 text-brand-blue flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-white text-base uppercase">Contact Info</h4>
+              <p class="text-slate-300 text-base font-bold mt-1">01315-887788</p>
+              <div class="flex flex-wrap gap-3 mt-3">
+                <a href="tel:01315887788" class="px-4 py-2 bg-brand-blue hover:bg-brand-blueDark text-white text-xs font-bold uppercase rounded-lg transition">
+                  <i class="fa-solid fa-phone mr-1"></i> Call Now
+                </a>
+                <a href="https://wa.me/8801315887788" target="_blank" class="px-4 py-2 bg-[#25D366] hover:bg-emerald-600 text-white text-xs font-bold uppercase rounded-lg transition">
+                  <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Us
+                </a>
+                <a href="https://maps.google.com/?q=Nikra,+Dohar,+Dhaka" target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase rounded-lg transition">
+                  <i class="fa-solid fa-diamond-turn-right mr-1"></i> Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 h-72 relative shadow-xl">
+          <iframe 
+            title="Arena Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116930.56942006323!2d90.07686566276805!3d23.593796851213032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37559124483759a1%3A0x6b5a371cba816d90!2sDohar%20Upazila!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl">
+          <h3 class="font-display font-black text-xl text-white uppercase mb-4">Contact Form</h3>
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Name</label>
+              <input type="text" required placeholder="Your Name" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Phone</label>
+              <input type="tel" required placeholder="01315-887788" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Message</label>
+              <textarea rows="4" required placeholder="Your message or event inquiry" class="w-full bg-brand-dark border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-neon"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 bg-brand-neon hover:bg-lime-400 text-brand-charcoal font-display font-black uppercase text-xs tracking-wider rounded-xl transition shadow-lg shadow-brand-neon/20">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 14. FOOTER WITH LOGO ================= -->
+  <footer class="bg-black/90 border-t border-white/10 pt-16 pb-12 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      
+      <!-- Brand & Tagline with Official Logo -->
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 p-1 flex items-center justify-center">
+            <img src="logo.png" alt="Legends Logo Footer" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/006FCB/84CC16?text=L';"/>
+          </div>
+          <div>
+            <span class="font-display font-black text-lg text-white tracking-wider uppercase block leading-none">Legends</span>
+            <span class="text-[9px] text-brand-neon font-bold tracking-widest uppercase">Multi Sports Arena</span>
+          </div>
+        </div>
+        <p class="font-display italic text-brand-neon text-xs font-bold mt-3">Be the Next Legend.</p>
+        <p class="text-xs text-slate-400 mt-2">
+          Nikra, Dohar, Dhaka, Bangladesh<br />
+          Phone: 01315-887788
+        </p>
+      </div>
+
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Arena Links</h5>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li><a href="#" class="hover:text-brand-neon transition">Home</a></li>
+          <li><a href="#about" class="hover:text-brand-neon transition">About</a></li>
+          <li><a href="#facilities" class="hover:text-brand-neon transition">Sports</a></li>
+          <li><a href="#pricing" class="hover:text-brand-neon transition">Pricing</a></li>
+          <li><a href="#booking" class="hover:text-brand-neon transition">Booking</a></li>
+          <li><a href="#membership" class="hover:text-brand-neon transition">Membership</a></li>
+          <li><a href="#gallery" class="hover:text-brand-neon transition">Gallery</a></li>
+          <li><a href="#contact" class="hover:text-brand-neon transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Connect Social</h5>
+        <div class="flex gap-3 mb-4">
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-neon text-white flex items-center justify-center text-xs transition">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-neon text-white flex items-center justify-center text-xs transition">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-neon text-white flex items-center justify-center text-xs transition">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+        <p class="text-xs text-slate-400">Follow us on Facebook, Instagram, and TikTok for upcoming tournament livestreams.</p>
+      </div>
+
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Admin System</h5>
+        <button onclick="toggleAdminModal()" class="w-full py-2.5 px-4 rounded-xl border border-white/15 bg-white/5 text-xs text-slate-300 font-bold uppercase hover:bg-white/10 transition text-left flex items-center justify-between">
+          <span><i class="fa-solid fa-shield-halved text-brand-neon mr-2"></i> Arena Management</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Legends Multi Sports Arena. All Rights Reserved.</p>
+      <p>Nikra, Dohar, Dhaka, Bangladesh</p>
+    </div>
+  </footer>
+
+  <!-- ================= ADMIN DASHBOARD MODAL WITH BRAND CREST ================= -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-4xl w-full rounded-3xl p-6 sm:p-8 border border-white/20 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <img src="logo.png" alt="Admin Crest" class="w-10 h-10 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/006FCB/84CC16?text=L';"/>
+          <div>
+            <span class="text-[10px] font-bold text-brand-neon tracking-widest uppercase block">Arena Console</span>
+            <h3 class="font-display font-black text-xl text-white uppercase">Legends Operations Hub</h3>
+          </div>
+        </div>
+        <button onclick="toggleAdminModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 my-6">
+        <div class="bg-brand-dark p-3 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase text-slate-400 block font-semibold">Today's Bookings</span>
+          <span class="text-xl font-black text-white font-display">12</span>
+        </div>
+        <div class="bg-brand-dark p-3 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase text-slate-400 block font-semibold">Today's Revenue</span>
+          <span class="text-xl font-black text-brand-neon font-display">৳28,500</span>
+        </div>
+        <div class="bg-brand-dark p-3 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase text-slate-400 block font-semibold">Available Slots</span>
+          <span class="text-xl font-black text-brand-blue font-display">6</span>
+        </div>
+        <div class="bg-brand-dark p-3 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase text-slate-400 block font-semibold">Upcoming Matches</span>
+          <span class="text-xl font-black text-amber-400 font-display">8</span>
+        </div>
+        <div class="bg-brand-dark p-3 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase text-slate-400 block font-semibold">Active Members</span>
+          <span class="text-xl font-black text-purple-400 font-display">34 Teams</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Today's Real-time Roster</h4>
+          <span class="text-[10px] text-brand-neon">Live Feed</span>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-white/10">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-brand-surfaceLight text-slate-400 uppercase text-[10px]">
+              <tr>
+                <th class="p-3">Slot Time</th>
+                <th class="p-3">Sport</th>
+                <th class="p-3">Customer / Team</th>
+                <th class="p-3">Phone</th>
+                <th class="p-3">Status</th>
+                <th class="p-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 bg-brand-dark">
+              <tr>
+                <td class="p-3 font-semibold text-white">06:00 PM - 07:00 PM</td>
+                <td class="p-3">⚽ Football</td>
+                <td class="p-3">Tanvir Ahmed</td>
+                <td class="p-3">01711-223344</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-400 font-bold uppercase">Approved</span></td>
+                <td class="p-3 text-right"><button class="text-red-400 hover:underline">Block</button></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">08:00 PM - 09:00 PM</td>
+                <td class="p-3">⚽ Football</td>
+                <td class="p-3">Dohar Tigers FC</td>
+                <td class="p-3">01822-556677</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] bg-red-500/20 text-red-400 font-bold uppercase">Booked (Paid)</span></td>
+                <td class="p-3 text-right"><button class="text-slate-400 hover:underline">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/10 flex justify-end">
+        <button onclick="toggleAdminModal()" class="px-5 py-2 rounded-xl bg-white/10 text-white text-xs font-bold uppercase hover:bg-white/20 transition">
+          Close Admin Panel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/8801315887788?text=Hello%20Legends%20Arena,%20I%20want%20to%20book%20a%20slot" target="_blank" class="fixed bottom-20 md:bottom-8 right-5 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition duration-300 group" aria-label="WhatsApp Contact">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-brand-charcoal text-white text-xs px-3 py-1.5 rounded-lg border border-white/10 opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-xl pointer-events-none">
+      WhatsApp Arena
+    </span>
+  </a>
+
+  <!-- ================= STICKY MOBILE BOTTOM BAR ================= -->
+  <div class="fixed bottom-0 left-0 w-full z-40 bg-brand-dark/95 backdrop-blur-lg border-t border-white/10 px-4 py-2.5 flex items-center justify-around md:hidden shadow-2xl">
+    <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition">
+      <i class="fa-solid fa-house text-sm"></i>
+      <span class="text-[10px] mt-1 font-semibold">Home</span>
+    </a>
+    <a href="#booking" class="flex items-center gap-1.5 bg-brand-neon text-brand-charcoal font-display font-extrabold px-5 py-2 rounded-xl shadow-lg shadow-brand-neon/30 text-xs uppercase tracking-wider scale-105">
+      <i class="fa-solid fa-bolt"></i>
+      <span>Book Now</span>
+    </a>
+    <a href="#membership" class="flex flex-col items-center text-slate-400 hover:text-white transition">
+      <i class="fa-solid fa-users text-sm"></i>
+      <span class="text-[10px] mt-1 font-semibold">Membership</span>
+    </a>
+    <a href="tel:01315887788" class="flex flex-col items-center text-slate-400 hover:text-brand-neon transition">
+      <i class="fa-solid fa-phone text-sm"></i>
+      <span class="text-[10px] mt-1 font-semibold">Contact</span>
+    </a>
+  </div>
+
+  <!-- ================= JAVASCRIPT ENGINE ================= -->
+  <script>
+    const state = {
+      selectedSport: 'Football',
+      selectedDate: '2026-10-04',
+      selectedSlot: null,
+      slotPrice: 0,
+      slotsData: [
+        { time: '06:00 AM', status: 'available', price: 2000 },
+        { time: '07:00 AM', status: 'available', price: 2000 },
+        { time: '08:00 AM', status: 'booked', price: 2000 },
+        { time: '09:00 AM', status: 'available', price: 2000 },
+        { time: '05:00 PM', status: 'booked', price: 2500 },
+        { time: '06:00 PM', status: 'available', price: 2500 },
+        { time: '07:00 PM', status: 'available', price: 2500 },
+        { time: '08:00 PM', status: 'available', price: 2500 },
+      ]
+    };
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function toggleAdminModal() {
+      document.getElementById('adminModal').classList.toggle('hidden');
+    }
+
+    function selectSport(sportKey) {
+      document.querySelectorAll('.sport-btn').forEach(btn => {
+        btn.classList.remove('border-brand-neon', 'bg-brand-neon/10', 'text-white');
+        btn.classList.add('border-white/10', 'bg-brand-surface', 'text-slate-300');
+      });
+
+      const selected = document.getElementById(`sport-${sportKey}`);
+      if (selected) {
+        selected.classList.add('border-brand-neon', 'bg-brand-neon/10', 'text-white');
+        selected.classList.remove('border-white/10', 'bg-brand-surface', 'text-slate-300');
+      }
+
+      state.selectedSport = sportKey.charAt(0).toUpperCase() + sportKey.slice(1);
+      updateSummary();
+    }
+
+    function generateSlots() {
+      const dateInput = document.getElementById('bookingDate').value;
+      state.selectedDate = dateInput || '2026-10-04';
+      state.selectedSlot = null;
+      document.getElementById('submitBookingBtn').disabled = true;
+
+      const container = document.getElementById('slotsGrid');
+      container.innerHTML = '';
+
+      state.slotsData.forEach((slot, index) => {
+        const isBooked = slot.status === 'booked';
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.disabled = isBooked;
+
+        let baseClasses = "slot-btn p-3 rounded-xl text-left border transition text-xs font-semibold flex flex-col justify-between h-20 ";
+
+        if (isBooked) {
+          baseClasses += "border-red-950/40 bg-red-950/20 text-red-400/50 cursor-not-allowed";
+          btn.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="font-bold">${slot.time}</span>
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+            </div>
+            <span class="text-[10px] text-red-400 font-mono uppercase">Booked</span>
+          `;
+        } else {
+          baseClasses += "border-white/10 bg-brand-surface hover:border-brand-neon text-slate-200 cursor-pointer";
+          btn.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="font-bold">${slot.time}</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-slate-400">
+              <span>৳${slot.price}</span>
+              <span class="text-emerald-400 font-mono">Available</span>
+            </div>
+          `;
+          btn.onclick = () => selectSlot(index, btn);
+        }
+
+        btn.className = baseClasses;
+        btn.id = `slot-item-${index}`;
+        container.appendChild(btn);
+      });
+
+      updateSummary();
+    }
+
+    function selectSlot(index, btnElement) {
+      document.querySelectorAll('.slot-btn').forEach(btn => {
+        if (!btn.disabled) {
+          btn.classList.remove('border-brand-neon', 'bg-brand-neon/20', 'text-white', 'scale-105');
+          btn.classList.add('border-white/10', 'bg-brand-surface', 'text-slate-200');
+        }
+      });
+
+      btnElement.classList.add('border-brand-neon', 'bg-brand-neon/20', 'text-white', 'scale-105');
+      btnElement.classList.remove('border-white/10', 'bg-brand-surface');
+
+      state.selectedSlot = state.slotsData[index].time;
+      state.slotPrice = state.slotsData[index].price;
+      document.getElementById('submitBookingBtn').disabled = false;
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const summaryText = document.getElementById('summaryText');
+      const summaryPrice = document.getElementById('summaryPrice');
+
+      if (state.selectedSlot) {
+        summaryText.innerHTML = `${state.selectedSport} • ${state.selectedDate} • <span class="text-brand-neon">${state.selectedSlot}</span>`;
+        summaryPrice.innerText = `৳${state.slotPrice}`;
+      } else {
+        summaryText.innerText = "Please select a time slot above";
+        summaryPrice.innerText = "৳0";
+      }
+    }
+
+    function prefillBooking(type) {
+      const bookingSec = document.getElementById('booking');
+      bookingSec.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const targetIndex = type === 'offpeak' ? 0 : 5;
+        const targetBtn = document.getElementById(`slot-item-${targetIndex}`);
+        if (targetBtn && !targetBtn.disabled) {
+          targetBtn.click();
+        }
+      }, 500);
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      if (!state.selectedSlot) return;
+
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const randomID = 'LEG-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('confId').innerText = `#${randomID}`;
+      document.getElementById('confSport').innerText = state.selectedSport;
+      document.getElementById('confDate').innerText = state.selectedDate;
+      document.getElementById('confTime').innerText = state.selectedSlot;
+      document.getElementById('confPrice').innerText = `৳${state.slotPrice}`;
+
+      const waText = encodeURIComponent(
+        `Hello Legends Multi Sports Arena,\nBooking ID: #${randomID}\nSport: ${state.selectedSport}\nDate: ${state.selectedDate}\nTime: ${state.selectedSlot}\nName: ${name}\nPhone: ${phone}\nPlease confirm my slot!`
+      );
+      document.getElementById('confWhatsAppBtn').href = `https://wa.me/8801315887788?text=${waText}`;
+      document.getElementById('confirmationModal').classList.remove('hidden');
+    }
+
+    function closeConfirmationModal() {
+      document.getElementById('confirmationModal').classList.add('hidden');
+      document.getElementById('bookingForm').reset();
+      state.selectedSlot = null;
+      generateSlots();
+    }
+
+    function handleMembershipSubmit(e) {
+      e.preventDefault();
+      alert("Membership registration received! The Legends Arena team will contact your manager shortly.");
+      e.target.reset();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert("Message received! We will reach back out to you at 01315-887788.");
+      e.target.reset();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      generateSlots();
+    });
+  </script>
+</body>
+</html>
